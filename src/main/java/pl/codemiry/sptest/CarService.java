@@ -3,9 +3,11 @@ package pl.codemiry.sptest;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class CarService {
 
@@ -20,8 +22,8 @@ public class CarService {
         carList.add(car2);
         carList.add(car3);
     }
-@EventListener(ApplicationReadyEvent.class)
-    public void showCar() {
-        carList.forEach(System.out::println);
+
+    public List<Car> getCars() {
+        return carList;
     }
 }
