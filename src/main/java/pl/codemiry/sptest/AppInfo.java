@@ -20,6 +20,14 @@ public class AppInfo {
         this.appVersion = appVersion;
     }
 
+    public String getAppName() {
+        return appName;
+    }
+
+    public int getAppVersion() {
+        return appVersion;
+    }
+
     @EventListener(ApplicationReadyEvent.class)
     private void get() {
         System.out.println(appName);
